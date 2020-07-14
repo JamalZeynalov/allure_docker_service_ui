@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  aggregator:
+    container_name: aggregator
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - allure_docker_service
+    networks:
+      - app-net
+
+  allure_docker_service:
+    image: frankescobar/allure-docker-service
+    container_name: allure-service
+    environment:
+      CHECK_RESULTS_EVERY_SECONDS: 5
+      KEEP_HISTORY: "TRUE"
+    ports:
+      - "5050:5050"
+    volumes:
+      - .:/code
+      - /target/allure-results:/app/allure-results
+      - /target/allure-reports:/app/default-reports
+    networks:
+      - app-net
+
+networks:
+  app-net:
