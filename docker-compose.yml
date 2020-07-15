@@ -16,13 +16,12 @@ services:
     container_name: allure-service
     environment:
       CHECK_RESULTS_EVERY_SECONDS: 5
-      KEEP_HISTORY: "TRUE"
+      KEEP_HISTORY: "FALSE"
     ports:
       - "5050:5050"
     volumes:
-      - .:/code
-      - /target/allure-results:/app/allure-results
-      - /target/allure-reports:/app/default-reports
+      - ./target/allure-results:/app/allure-results
+      - ./target/allure-reports:/app/default-reports
     networks:
       - app-net
 
