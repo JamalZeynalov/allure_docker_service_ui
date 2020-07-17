@@ -4,6 +4,8 @@ services:
   allure_docker_service_ui:
     container_name: allure_docker_service_ui
     image: jamalzeinalov/allure_docker_service_ui
+    environment:
+      ALLURE_SERVICE_CONTAINER: allure_serv
     ports:
       - "8000:8000"
     depends_on:
