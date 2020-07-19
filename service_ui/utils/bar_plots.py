@@ -32,9 +32,9 @@ def generate_tests_history_plot(daily_reports: List[str]):
     # Generate report
     plotdata.plot.bar(stacked=True, rot="horizontal",
                       color=['red', 'orange', 'grey', 'green'])
-    plt.title("Daily trending report")
-    plt.xlabel("Daily reports")
-    plt.ylabel("Tests count")
+    plt.title("Daily History")
+    plt.xlabel("Daily Reports")
+    plt.ylabel("Test cases")
 
     # Save it to a temporary buffer.
     plt.savefig('./service_ui/static/trending.png', format="png")
