@@ -3,6 +3,7 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block navigation %}
+    <a id="history" href="{% url 'service_ui:history' %}"> History  </a>
     {% for project in projects %}
         <a href="{% url 'service_ui:daily-reports' project %}"
            {% if project in request.path %}class="active"{% endif %}>{{ project }}</a>

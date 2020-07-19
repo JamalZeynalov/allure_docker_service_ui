@@ -1,9 +1,9 @@
-version: '3'
+version: "3.8"
 
 services:
   allure_docker_service_ui:
-    container_name: allure_docker_service_ui
     image: jamalzeinalov/allure_docker_service_ui
+    container_name: allure_docker_service_ui
     environment:
       ALLURE_SERVICE_CONTAINER: allure_serv
     ports:
@@ -23,7 +23,8 @@ services:
       - "5050:5050"
     volumes:
       - ./target/allure-results:/app/allure-results
-      - ./target/allure-reports:/app/default-reports
+      - ./target/default-reports:/app/default-reports
+      - ./target/projects:/app/allure-docker-api/static/projects
     networks:
       - app-net
 

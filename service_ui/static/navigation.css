@@ -1,4 +1,5 @@
 a {
+    top: 5px;
     position: relative;
     margin-bottom: 8px;
     font-family: monospace;
@@ -31,7 +32,6 @@ a:active {
 }
 
 a.active {
-    top: 1px;
     background: linear-gradient(rgb(76, 77, 82), rgb(16, 222, 51)) rgb(76, 77, 82);
     box-shadow: 0 0 1px rgba(0, 0, 0, .5) inset,
     0 2px 3px rgba(0, 0, 0, .5) inset,
@@ -39,7 +39,6 @@ a.active {
 }
 
 a#all-reports {
-    top: 1px;
     background: linear-gradient(rgb(76, 77, 82), rgb(16, 164, 222)) rgb(76, 77, 82);
     box-shadow: 0 0 1px rgba(0, 0, 0, .5) inset,
     0 2px 3px rgba(0, 0, 0, .5) inset,
@@ -47,8 +46,15 @@ a#all-reports {
 }
 
 a#latest {
-    top: 1px;
     background: linear-gradient(rgb(76, 77, 82), rgb(16, 222, 51)) rgb(76, 77, 82);
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5) inset,
+    0 2px 3px rgba(0, 0, 0, .5) inset,
+    0 1px 1px rgba(255, 255, 255, .1);
+}
+
+a#history {
+    top: 5px;
+    background: linear-gradient(rgb(76, 77, 82), rgb(16, 164, 222)) rgb(76, 77, 82);
     box-shadow: 0 0 1px rgba(0, 0, 0, .5) inset,
     0 2px 3px rgba(0, 0, 0, .5) inset,
     0 1px 1px rgba(255, 255, 255, .1);

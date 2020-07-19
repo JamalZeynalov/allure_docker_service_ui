@@ -3,6 +3,7 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block navigation %}
+    <a id="history" href="{% url 'service_ui:history' %}"> History  </a>
     <a id="latest" href="{% url 'service_ui:home' %}"> Latest </a><br>
     {% for project in projects %}
         <a href="{% url 'service_ui:daily-reports' project %}"

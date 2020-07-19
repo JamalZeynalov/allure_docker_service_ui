@@ -1,13 +1,14 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
+from service_ui.utils.bar_plots import generate_tests_history_plot
 from service_ui.utils.projects_filtering import get_latest_daily, get_all_daily_reports
 
 
 def daily(request, report_date: str):
     latest_10_projects = get_latest_daily()
 
-    report_url = f"http://localhost:5050/allure-docker-service/projects/{report_date}/reports/latest/index.html"
+    report_url = f"http://localhost:5050/allure-docker-service/latest-report?project_id={report_date}"
     if len(latest_10_projects):
         return render(request, 'service_ui/daily.html', {'projects': latest_10_projects,
                                                          'report_url': report_url})
@@ -28,3 +29,10 @@ def dashboard(request):
 def all_reports(request):
     daily_reports = get_all_daily_reports()
     return render(request, 'service_ui/all_reports.html', {'projects': daily_reports})
+
+
+def history(request):
+    daily_reports = get_all_daily_reports()
+    generate_tests_history_plot(daily_reports)
+
+    return render(request, 'service_ui/trend_graph.html')

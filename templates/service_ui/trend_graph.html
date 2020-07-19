@@ -1,0 +1,13 @@
+{% extends 'service_ui/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block navigation %}
+    <a id="all-reports" href="{% url 'service_ui:all-reports' %}"> All Reports </a>
+    <a id="latest" href="{% url 'service_ui:home' %}"> Latest </a>
+{% endblock %}
+
+{% block report %}
+    {% load static %}
+    <img src="{% static 'trending.png' %}" alt="History plot">
+{% endblock %}
