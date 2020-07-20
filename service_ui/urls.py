@@ -19,5 +19,8 @@ from . import views
 
 app_name = 'service_ui'
 urlpatterns = [
-    path('', views.dashboard, name='dashboard'),
+    path('', views.dashboard, name='home'),
+    path('daily/<slug:report_date>/', views.daily, name='daily-reports'),
+    path('reports/', views.all_reports, name='all-reports'),
+    path('history/', views.history, name='history'),
 ]

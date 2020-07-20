@@ -3,5 +3,6 @@
 {% block title %}Report not found{% endblock %}
 
 {% block report %}
-    <img src="https://gtrame.com/images/nocontent[1].jpg" alt="Report not found">
+    {% load static %}
+    <img src="{% static 'no-content.jpg' %}" alt="Report not found">
 {% endblock %}
