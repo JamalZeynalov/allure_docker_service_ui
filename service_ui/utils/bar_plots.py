@@ -39,10 +39,13 @@ def generate_tests_history_plot(daily_reports: List[str]):
 
     # Generate report
     plotdata.plot.bar(stacked=True, rot="horizontal",
-                      color=['red', 'orange', 'grey', 'green'])
-    plt.title("Daily History")
-    plt.xlabel("Daily Reports")
-    plt.ylabel("Test cases")
+                      color=['red', 'orange', 'grey', 'green'],
+                      figsize=(16, 6))
+
+    plt.title("Daily History",
+              fontdict={'family': 'serif', 'weight': 'normal', 'size': 16})
+    plt.ylabel("Executed test cases count",
+               fontdict={'weight': 'normal', 'size': 12})
 
     # Save it to a temporary buffer.
     plt.savefig('./service_ui/static/trending.png', format="png")
