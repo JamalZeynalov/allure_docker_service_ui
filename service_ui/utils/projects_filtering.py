@@ -16,7 +16,7 @@ def get_latest_daily(limit: int = 10) -> List[str]:
     projects = requests.get(BASE_LINK)
     projects = list(filter(lambda x: __is_date(x), projects.json()['data']['projects']))
 
-    return sorted(projects)[-10:]
+    return sorted(projects)[-limit:]
 
 
 def get_all_daily_reports() -> List[str]:

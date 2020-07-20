@@ -35,7 +35,7 @@ def all_reports(request):
 @never_cache
 @cache_control(max_age=0, no_cache=True, no_store=True, must_revalidate=True)
 def history(request):
-    daily_reports = get_all_daily_reports()
-    generate_tests_history_plot(daily_reports)
+    latest_10_daily_reports = get_latest_daily()
+    generate_tests_history_plot(latest_10_daily_reports)
 
     return render(request, 'service_ui/trend_graph.html')
