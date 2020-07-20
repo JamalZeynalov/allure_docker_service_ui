@@ -1,5 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.views.decorators.cache import never_cache, cache_control
 
 from service_ui.utils.bar_plots import generate_tests_history_plot
 from service_ui.utils.projects_filtering import get_latest_daily, get_all_daily_reports
@@ -31,6 +32,8 @@ def all_reports(request):
     return render(request, 'service_ui/all_reports.html', {'projects': daily_reports})
 
 
+@never_cache
+@cache_control(max_age=0, no_cache=True, no_store=True, must_revalidate=True)
 def history(request):
     daily_reports = get_all_daily_reports()
     generate_tests_history_plot(daily_reports)

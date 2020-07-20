@@ -5,13 +5,17 @@ services:
     image: jamalzeinalov/allure_docker_service_ui
     container_name: allure_docker_service_ui
     environment:
-      ALLURE_SERVICE_CONTAINER: allure_serv
+      ALLURE_SERVICE_CONTAINER: allure_docker_service
     ports:
       - "8000:8000"
     depends_on:
       - allure_docker_service
     networks:
       - app-net
+    volumes:
+      - ./target/allure-results:/code/target/allure-results
+      - ./target/default-reports:/code/target/default-reports
+      - ./target/projects:/code/target/projects
 
   allure_docker_service:
     image: frankescobar/allure-docker-service
