@@ -6,7 +6,7 @@ If you have multiple Test Automation projects with different bunches of tests an
 The main idea is to upload results of all tests to the daily report. Then at the end of a day you will see how many of your tests were passed/failed/broken/skipped. 
 If the certain test failed and then passed during the same date then the result will overriten to the latest one ("passed").
 
-This application os based on ["allure-docker-service"](https://github.com/fescobar/allure-docker-service)  project.
+This application is based on ["allure-docker-service"](https://github.com/fescobar/allure-docker-service)  project.
 
 
 ## Installation with Docker:
