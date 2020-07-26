@@ -4,7 +4,7 @@ This web application is created to assemble all asynchronously uploading allure-
 If you have multiple Test Automation projects with different bunches of tests and you want to get their latest results in one report then this app will be helpful for you.
 
 The main idea is to upload results of all tests to the daily report. Then at the end of a day you will see how many of your tests were passed/failed/broken/skipped. 
-If the certain test failed and then passed during the same date then the result will overriten to the latest one ("passed").
+If the certain test failed and then passed during the same date then the result will overridden to the latest one ("passed").
 
 This application is based on ["allure-docker-service"](https://github.com/fescobar/allure-docker-service)  project.
 
