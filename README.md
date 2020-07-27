@@ -55,11 +55,11 @@ networks:
 This command will create `target` folder. All results sent to the service will be mounted into this folder.
 
 ## Usage:
-You can use my ["allure-results-sample"](https://github.com/JamalZeynalov/allure-results-sample) project to generate some results and try it out.
+You can use ["allure-results-sample"](https://github.com/JamalZeynalov/allure-results-sample) project to try it out.
 Follow the steps in its description to generate test results.
 
-In that project (and in this repo ) you will find ["send_allure_results.py"](/examples/send_allure_results.py) file. This file contains python script to send allure results to the service.
-More ways to send results you can find [here](https://github.com/fescobar/allure-docker-service#send-results-through-api):
+In that project (and in this repository) you will find ["send_allure_results.py"](/examples/send_allure_results.py) file. This file contains python script to send allure results to the service.
+More ways to send results you can find [here](https://github.com/fescobar/allure-docker-service#send-results-through-api). <br> But you have to modify them accordingly to send results with "project_id" in ISO 8601 date format (YYYY-MM-DD).
 
 After some results are uploaded you can navigate to the application dashboard and check reports:<br>
 http://localhost:8000/
@@ -72,19 +72,20 @@ http://localhost:5050/allure-docker-service/swagger/
 On this page a user can navigate through up to 10 latest daily reports. By default a user is redirected to the latest daily report.
 Also `Latest` button will always lead to the latest available report.
 
-![Image of Yaktocat](images/latest.png)
+<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/images/latest.png" width=1100 alt="Latest">
 
 You can use these reports as usual. All allure report features are available.
 
-![Image of Yaktocat](images/navigation.png)
+<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/images/navigation.png" width=1100 alt="navigation">
 
 
 #### 2. All Reports
-This page contains links to all available daily reports. No limits are set for this page.
+This page contains links to all available daily reports. The number of reports on this page is not limited.
 
-![Image of Yaktocat](images/all_reports.png)
+<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/images/all_reports.png" width=1100 alt="all_reports">
 
 #### 2. Daily History
 This page contains a graph with results of latest 10 daily reports
 
-![Image of Yaktocat](images/history.png)
+<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/images/history.png" width=1100 alt="history">
+
