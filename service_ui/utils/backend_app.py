@@ -8,7 +8,7 @@ class BackendApp:
         self.host = os.environ.get('ALLURE_SERVICE_HOST_NAME', default='localhost')
         self.port = f":{port}" if (port := os.environ.get('ALLURE_SERVICE_PORT')) else ''
 
-        self.base_url = f"http://{self.host}{self.port}/allure-docker-service"
+        self.base_url = f"http://allureservice-sqrs-sca1-edp-cicd.demo.edp-epam.com/allure-docker-service/projects"
 
     def get_projects(self):
         response = requests.get(f"{self.base_url}/projects")
