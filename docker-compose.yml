@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   allure_docker_service_ui:
-    image: jamalzeinalov/allure_docker_service_ui
+    image: jamalzeinalov/allure_docker_service_ui:test
     container_name: allure_docker_service_ui
     environment:
       ALLURE_SERVICE_HOST: allure_docker_service
