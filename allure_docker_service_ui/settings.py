@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     gethostname(),  # For internal OpenShift load balancer security purposes.
     os.environ.get('OPENSHIFT_APP_DNS'),  # Dynamically map to the OpenShift gear name.
-    'allure-sqrs-sca1-edp-cicd.demo.edp-epam.com'
+    os.environ.get('ALLURE_SERVICE_HOST', '')
 ]
 
 # Application definition
