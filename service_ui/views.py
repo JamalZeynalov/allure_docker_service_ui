@@ -3,14 +3,14 @@ from django.shortcuts import render
 from django.views.decorators.cache import never_cache, cache_control
 
 from service_ui.utils.bar_plots import generate_tests_history_plot
+from service_ui.utils.frontend_app import FrontendApp
 from service_ui.utils.projects_filtering import get_latest_daily, get_all_daily_reports
 
 
 def daily(request, report_date: str):
-    latest_10_projects = get_latest_daily()
-
-    report_url = f"http://localhost:5050/allure-docker-service/latest-report?project_id={report_date}"
-    if len(latest_10_projects):
+    # report_url = f"http://localhost:5050/allure-docker-service/latest-report?project_id={report_date}"
+    if len(latest_10_projects := get_latest_daily()):
+        report_url = FrontendApp().get_daily_report_url(report_date)
         return render(request, 'service_ui/daily.html', {'projects': latest_10_projects,
                                                          'report_url': report_url})
     else:
@@ -18,9 +18,7 @@ def daily(request, report_date: str):
 
 
 def dashboard(request):
-    latest_10_projects = get_latest_daily()
-
-    if len(latest_10_projects):
+    if len(latest_10_projects := get_latest_daily()):
         report_date = str(latest_10_projects[-1])
         return HttpResponseRedirect(f'/daily/{report_date}')
     else:
