@@ -16,7 +16,7 @@ def daily(request, report_date: str):
         return render(request, 'service_ui/not_found.html')
 
 
-def dashboard(request):
+def home(request):
     if len(latest_10_projects := get_latest_daily()):
         report_date = str(latest_10_projects[-1])
         return HttpResponseRedirect(f'/daily/{report_date}')

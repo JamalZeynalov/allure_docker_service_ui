@@ -68,15 +68,15 @@ Follow the steps in its description to generate test results.
 In that project (and in this repository) you will find ["send_allure_results.py"](/examples/send_allure_results.py) file. This file contains python script to send allure results to the service.
 More ways to send results you can find [here](https://github.com/fescobar/allure-docker-service#send-results-through-api). <br> But you have to modify them accordingly to send results with "project_id" in ISO 8601 date format (YYYY-MM-DD).
 
-After some results are uploaded you can navigate to the application dashboard and check reports:<br>
-[http://localhost:8000](http://localhost:8000)
+After some results are uploaded you can navigate to the application home page and check reports:<br>
+[http://localhost:8000/home](http://localhost:8000/home)
 <br>Note: The image "not content available" will be displayed until some results are uploaded.
 
 The allure docker service swagger documentation is available at the following link:<br>
 [http://localhost:5050/allure-docker-service/swagger](http://localhost:5050/allure-docker-service/swagger)
 
 ## Web Pages:
-#### 1. Dashboard
+#### 1. Home
 On this page a user can navigate through up to 10 latest daily reports. By default a user is redirected to the latest daily report.
 Also `Latest` button will always lead to the latest available report.
 

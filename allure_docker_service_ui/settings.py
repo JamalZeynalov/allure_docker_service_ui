@@ -26,7 +26,7 @@ SECRET_KEY = '#e2xmb&!f-5eb--u_2phty1v3o+@psc!w2fd-uuuz$2b)mlg_7'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost',
+    'localhost', '127.0.0.1',
     gethostname(),  # For internal OpenShift load balancer security purposes.
     os.environ.get('ALLURE_SERVICE_HOST'),
     os.environ.get('ALLURE_UI_HOST_NAME'),
