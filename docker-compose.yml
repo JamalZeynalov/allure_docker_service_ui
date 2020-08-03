@@ -6,7 +6,7 @@ services:
     container_name: allure_docker_service_ui
     environment:
       ALLURE_SERVICE_HOST: allure_docker_service
-      ALLURE_SERVICE_PORT: 5050
+      ALLURE_SERVICE_HOST_NAME: allure-sqrs-sca1-edp-cicd.demo.edp-epam.com
     ports:
       - "8000:8000"
     depends_on:

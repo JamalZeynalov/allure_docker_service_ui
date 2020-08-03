@@ -8,7 +8,6 @@ from service_ui.utils.projects_filtering import get_latest_daily, get_all_daily_
 
 
 def daily(request, report_date: str):
-    # report_url = f"http://localhost:5050/allure-docker-service/latest-report?project_id={report_date}"
     if len(latest_10_projects := get_latest_daily()):
         report_url = FrontendApp().get_daily_report_url(report_date)
         return render(request, 'service_ui/daily.html', {'projects': latest_10_projects,
