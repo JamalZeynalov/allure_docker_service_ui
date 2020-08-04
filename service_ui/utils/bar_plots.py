@@ -15,7 +15,7 @@ def generate_tests_history_plot(daily_reports: List[str]):
     skipped = []
     for project in daily_reports:
         try:
-            with open(f'target/projects/{project}/reports/latest/history/history-trend.json') as f:
+            with open(f'service_ui/static/projects/{project}/reports/latest/history/history-trend.json') as f:
                 results = json.load(f)[0]['data']
 
                 indexes.append(project)

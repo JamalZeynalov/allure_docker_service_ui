@@ -15,6 +15,3 @@ class BackendApp:
         assert response.status_code == 200, f"Cannot get projects from API. Response:\n {response.content}"
 
         return response.json()['data']['projects']
-
-    def get_daily_report_url(self, report_date: str):
-        return f"{self.base_url}/latest-report?project_id={report_date}"

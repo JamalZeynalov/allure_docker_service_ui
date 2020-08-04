@@ -3,16 +3,17 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block navigation %}
-    <a id="history" href="{% url 'service_ui:history' %}"> History  </a>
+    <a id="history" href="{% url 'service_ui:history' %}"> History </a>
     {% for project in projects %}
         <a href="{% url 'service_ui:daily-reports' project %}"
            {% if project in request.path %}class="active"{% endif %}>{{ project }}</a>
     {% endfor %}
     <a id="all-reports" href="{% url 'service_ui:all-reports' %}"> All Reports </a>
-    <a id="latest" href="{% url 'service_ui:home' %}"> Latest  </a>
+    <a id="latest" href="{% url 'service_ui:home' %}"> Latest </a>
 {% endblock %}
 
 {% block report %}
-    <iframe src="{{ report_url }}"
+    {% load static %}
+    <iframe src="{% static 'projects/'|add:request.report_date|add:'/reports/latest/index.html' %}"
             style="position: absolute; height: 100%; width: 100%; border: none"></iframe>
 {% endblock %}
