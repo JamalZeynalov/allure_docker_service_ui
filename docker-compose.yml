@@ -5,8 +5,9 @@ services:
     image: jamalzeinalov/allure_docker_service_ui:test
     container_name: allure-docker-service-ui
     environment:
-      ALLURE_SERVICE_HOST_NAME: allure_docker_service
-      ALLURE_SERVICE_PORT: 5050
+      ALLURE_SERVICE_HOST_NAME: allure-docker-service-api # required
+      ALLURE_SERVICE_PORT: 5050 # required if ALLURE_SERVICE_HOST port is not '80'
+      ALLURE_UI_HOST_NAME: localhost # optional. Includes the hostname to ALLOWED_HOSTS
     ports:
       - "8000:8000"
     depends_on:

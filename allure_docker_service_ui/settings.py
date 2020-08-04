@@ -27,8 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost', '127.0.0.1',
-    gethostname(),  # For internal OpenShift load balancer security purposes.
-    os.environ.get('ALLURE_SERVICE_HOST'),
     os.environ.get('ALLURE_UI_HOST_NAME'),
     os.environ.get('ALLURE_SERVICE_HOST_NAME')
 ]
