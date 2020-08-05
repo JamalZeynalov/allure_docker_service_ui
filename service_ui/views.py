@@ -3,17 +3,18 @@ from django.shortcuts import render
 from django.views.decorators.cache import never_cache, cache_control
 
 from service_ui.utils.bar_plots import generate_tests_history_plot
-from service_ui.utils.projects_filtering import get_latest_daily, get_all_daily_reports
+from service_ui.utils.projects_filtering import get_latest_daily, get_all_daily_reports, get_report_path_if_exists
 
 
 @never_cache
 @cache_control(max_age=0, no_cache=True, no_store=True, must_revalidate=True)
 def daily(request, report_date: str):
     if len(latest_10_projects := get_latest_daily()):
-        request.report_date = report_date
+
+        report_path = get_report_path_if_exists(report_date)
 
         return render(request, 'service_ui/daily.html', {'projects': latest_10_projects,
-                                                         'report_url': report_date})
+                                                         'report_path': report_path})
     else:
         return render(request, 'service_ui/not_found.html')
 

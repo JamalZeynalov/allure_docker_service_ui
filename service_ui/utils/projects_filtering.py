@@ -1,4 +1,5 @@
 import re
+from os.path import isfile
 from typing import List
 
 from service_ui.utils.backend_app import BackendApp
@@ -17,3 +18,10 @@ def get_all_daily_reports() -> List[str]:
 
 def get_latest_daily(limit: int = 10) -> List[str]:
     return get_all_daily_reports()[-limit:]
+
+
+def get_report_path_if_exists(report_date: str):
+    path = f"projects/{report_date}/reports/latest/index.html"
+    full_path = f"./service_ui/static/{path}"
+
+    return 'work-in-progress.png' if not isfile(full_path) else path

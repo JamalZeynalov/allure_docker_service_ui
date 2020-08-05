@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  allure-docker-service-api:
+    image: frankescobar/allure-docker-service
+    container_name: allure-docker-service
+    environment:
+      CHECK_RESULTS_EVERY_SECONDS: 5
+      KEEP_HISTORY: "FALSE"
+    ports:
+      - "5050:5050"
+    volumes:
+      - ../service_ui/static/projects:/app/allure-docker-api/static/projects
+    networks:
+      - app-net
+
+networks:
+  app-net:
