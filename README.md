@@ -63,7 +63,7 @@ volumes:
 Note: Accept all disc sharing requested by Docker! This is required to mount applications volumes.<br>
 Also you can run `docker-compose up -d` command to run containers in detached mode.<br>
 The command line output should look like this:  
-<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/images/success-docker-compose-up.png" width=1100 alt="cmd_success">
+<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/docs/images/success-docker-compose-up.png" width=1100 alt="cmd_success">
 <br>
 Now both services are running and you can start using them. (do not terminate this process)
 <br>
@@ -91,20 +91,20 @@ The allure docker service swagger documentation is available at the following li
 On this page a user can navigate through up to 10 latest daily reports. By default a user is redirected to the latest daily report.
 Also the `Latest` button will always lead to the newest available report.
 
-<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/images/latest.png" width=1100 alt="Latest">
+<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/docs/images/latest.png" width=1100 alt="Latest">
 
 You can use these reports as usual. All allure report features are available.
 
-<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/images/navigation.png" width=1100 alt="navigation">
+<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/docs/images/navigation.png" width=1100 alt="navigation">
 
 
 #### 2. All Reports
 This page contains links to all available daily reports. The number of reports on this page is not limited.
 
-<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/images/all_reports.png" width=1100 alt="all_reports">
+<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/docs/images/all_reports.png" width=1100 alt="all_reports">
 
 #### 2. Daily History
 This page contains a graph with results of latest 10 daily reports
 
-<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/images/history.png" width=1100 alt="history">
+<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/docs/images/history.png" width=1100 alt="history">
 
