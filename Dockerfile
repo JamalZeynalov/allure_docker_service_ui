@@ -5,6 +5,8 @@ RUN mkdir /code
 WORKDIR /code
 COPY requirements.txt /code/
 
+RUN apt-get update && apt-get dist-upgrade -y && apt-get install apt-utils -y && apt-get install curl -y && apt-get install vim -y
+
 # install dependencies
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt

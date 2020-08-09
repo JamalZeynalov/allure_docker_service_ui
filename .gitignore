@@ -81,3 +81,5 @@ test-report.xml
 allure_result/**
 app/**
 target/*
+service_ui/static/projects/
+service_ui/static/trending.png

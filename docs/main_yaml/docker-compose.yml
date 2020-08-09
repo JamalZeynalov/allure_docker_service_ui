@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  allure-docker-service-ui:
+    image: jamalzeinalov/allure_docker_service_ui
+    container_name: allure-docker-service-ui
+    environment:
+      ALLURE_SERVICE_HOST_NAME: allure-docker-service-api
+      ALLURE_SERVICE_PORT: 5050
+    ports:
+      - "8000:8000"
+    depends_on:
+      - allure-docker-service-api
+    networks:
+      - app-net
+    volumes:
+      - apps-data:/code/service_ui/static/projects
+
+  allure-docker-service-api:
+    image: frankescobar/allure-docker-service
+    container_name: allure-docker-service
+    environment:
+      CHECK_RESULTS_EVERY_SECONDS: 5
+      KEEP_HISTORY: "FALSE"
+    ports:
+      - "5050:5050"
+    volumes:
+      - apps-data:/app/allure-docker-api/static/projects
+    networks:
+      - app-net
+
+networks:
+  app-net:
+
+volumes:
+  apps-data:
