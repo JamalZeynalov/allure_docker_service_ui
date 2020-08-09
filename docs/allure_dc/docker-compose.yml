@@ -10,7 +10,7 @@ services:
     ports:
       - "5050:5050"
     volumes:
-      - ../service_ui/static/projects:/app/allure-docker-api/static/projects
+      - ../../service_ui/static/projects:/app/allure-docker-api/static/projects
     networks:
       - app-net
 

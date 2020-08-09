@@ -25,6 +25,7 @@ SECRET_KEY = '#e2xmb&!f-5eb--u_2phty1v3o+@psc!w2fd-uuuz$2b)mlg_7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLURE_UI_HOST_NAME is required only if you're using different routes for UI and API
 ALLOWED_HOSTS = [
     'localhost', '127.0.0.1',
     os.environ.get('ALLURE_UI_HOST_NAME'),

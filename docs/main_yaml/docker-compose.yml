@@ -2,12 +2,11 @@ version: "3.8"
 
 services:
   allure-docker-service-ui:
-    image: jamalzeinalov/allure_docker_service_ui:test
+    image: jamalzeinalov/allure_docker_service_ui
     container_name: allure-docker-service-ui
     environment:
-      ALLURE_SERVICE_HOST_NAME: allure-docker-service-api # required
-      ALLURE_SERVICE_PORT: 5050 # required if ALLURE_SERVICE_HOST port is not '80'
-      ALLURE_UI_HOST_NAME: localhost # optional. Includes the hostname to ALLOWED_HOSTS
+      ALLURE_SERVICE_HOST_NAME: allure-docker-service-api
+      ALLURE_SERVICE_PORT: 5050
     ports:
       - "8000:8000"
     depends_on:
@@ -15,7 +14,7 @@ services:
     networks:
       - app-net
     volumes:
-      - ./service_ui/static/projects:/code/service_ui/static/projects
+      - apps-data:/code/service_ui/static/projects
 
   allure-docker-service-api:
     image: frankescobar/allure-docker-service
@@ -26,9 +25,12 @@ services:
     ports:
       - "5050:5050"
     volumes:
-      - ./service_ui/static/projects:/app/allure-docker-api/static/projects
+      - apps-data:/app/allure-docker-api/static/projects
     networks:
       - app-net
 
 networks:
   app-net:
+
+volumes:
+  apps-data:
