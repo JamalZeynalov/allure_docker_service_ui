@@ -1,6 +1,6 @@
 # Daily Allure Reports
 This web application is created to assemble all asynchronously uploading allure-results in one report. 
-<br>This report will not be divided by launches. Each next bunch of test results during the day will update the daily report. If a test failed and then passed during the same date then its result will overridden to the latest one ("passed").
+<br>This report will not be divided by launches. Each next bunch of test results during the day will update the daily report. If a test failed and then passed during the same date then its result will be overridden to the latest one ("passed").
 <br>And at the end of a day you will see how many of your tests were passed/failed/broken/skipped.
 
 If you have multiple Test Automation projects with different tests and you want to get their latest results in one report then this app will be helpful for you.
@@ -78,7 +78,7 @@ More ways to send results you can find [here](https://github.com/fescobar/allure
 <br> 
 > After the service is deployed you have to modify parameters accordingly to send results:<br> 
 > Set "project_id" in ISO 8601 date format (YYYY-MM-DD).<br>
-> Set a hostname of the running AllureDockerService app in "docker_allure_service_url" variable
+> Set a hostname of the running AllureDockerService app in "docker_allure_service_url" variable.
 
 After some results are uploaded you can navigate to the application home page and check reports:<br>
 [http://localhost:8000](http://localhost:8000)
@@ -88,7 +88,7 @@ The allure docker service swagger documentation is available at the following li
 
 ## Web Pages:
 #### 1. Dashboard
-On this page a user can navigate through up to 10 latest daily reports. By default a user is redirected to the latest daily report.
+On this page a user can navigate through up to 10 latest daily reports. By default, a user is redirected to the latest daily report.
 Also the `Latest` button will always lead to the newest available report.
 
 <img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/docs/images/latest.png" width=1100 alt="Latest">
@@ -104,7 +104,7 @@ This page contains links to all available daily reports. The number of reports o
 <img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/docs/images/all_reports.png" width=1100 alt="all_reports">
 
 #### 2. Daily History
-This page contains a graph with results of latest 10 daily reports
+This page contains a graph with results of latest 10 daily reports.
 
 <img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/docs/images/history.png" width=1100 alt="history">
 
