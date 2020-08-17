@@ -17,7 +17,7 @@ You need to have following tools installed and set up on your machine:
 
 ## Installation with Docker:
 #### 1. Create a new directory.
-#### 2. Create following [`docker-compose.yml`](docs/main_yaml/docker-compose.yml) file in the created directory:
+#### 2. Create following [`docker-compose.yml`](https://github.com/JamalZeynalov/allure_docker_service_ui/blob/master/docs/main_yaml/docker-compose.yml) file in the created directory:
 ```.yaml
 version: "3.8"
 
