@@ -17,10 +17,12 @@ from django.urls import path
 
 from . import views
 
-app_name = 'service_ui'
+app_name = "service_ui"
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('daily/<slug:report_date>/', views.daily, name='daily-reports'),
-    path('reports/', views.all_reports, name='all-reports'),
-    path('history/', views.history, name='history'),
+    path("", views.home, name="home"),
+    path("daily/<slug:report_date>/", views.daily, name="daily-reports"),
+    path("reports/", views.all_reports, name="all-reports"),
+    path("history/", views.history, name="history"),
+    path("delete/", views.delete_reports, name="delete-reports"),
+    path("delete/<slug:report_date>/", views.delete_report, name="delete-report"),
 ]

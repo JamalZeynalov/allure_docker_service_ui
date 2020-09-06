@@ -1,0 +1,15 @@
+{% extends 'service_ui/base.html' %}
+
+{% block title %}All Reports{% endblock %}
+
+{% block navigation %}
+    {% load static %}
+    <a id="all-reports" href="{% url 'service_ui:all-reports' %}"> View All Reports </a>
+    <a id="latest" href="{% url 'service_ui:home' %}"> View Latest Report </a><br>
+    <h1>Click to delete:</h1>
+    {% for project in projects %}
+        <a class="delete" onclick=delProject("{{ project }}")>{{ project }}</a>
+    {% endfor %}
+{% endblock %}
+
+

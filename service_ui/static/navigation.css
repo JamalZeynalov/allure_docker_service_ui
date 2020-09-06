@@ -1,3 +1,7 @@
+h1 {
+    font-family: monospace;
+}
+
 a {
     top: 5px;
     position: relative;
@@ -55,6 +59,14 @@ a#latest {
 a#history {
     top: 5px;
     background: linear-gradient(rgb(76, 77, 82), rgb(16, 164, 222)) rgb(76, 77, 82);
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5) inset,
+    0 2px 3px rgba(0, 0, 0, .5) inset,
+    0 1px 1px rgba(255, 255, 255, .1);
+}
+
+a.delete {
+    top: 5px;
+    background: linear-gradient(rgb(76, 77, 82), rgb(255, 0, 0)) rgb(82, 76, 76);
     box-shadow: 0 0 1px rgba(0, 0, 0, .5) inset,
     0 2px 3px rgba(0, 0, 0, .5) inset,
     0 1px 1px rgba(255, 255, 255, .1);
