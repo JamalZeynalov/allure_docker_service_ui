@@ -3,8 +3,9 @@
 {% block title %}All Reports{% endblock %}
 
 {% block navigation %}
-    <a id="history" href="{% url 'service_ui:history' %}"> History  </a>
-    <a id="latest" href="{% url 'service_ui:home' %}"> Latest </a><br>
+    <a id="history" href="{% url 'service_ui:history' %}"> View History </a>
+    <a class="delete" href="{% url 'service_ui:delete-reports' %}"> Delete Report </a>
+    <a id="latest" href="{% url 'service_ui:home' %}"> View Latest Report </a><br>
     {% for project in projects %}
         <a href="{% url 'service_ui:daily-reports' project %}"
            {% if project in request.path %}class="active"{% endif %}>{{ project }}</a>

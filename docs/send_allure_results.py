@@ -82,9 +82,11 @@ def send_results(service_url: str, results_directory, project_id: str = None) ->
 
 # Send results:
 try:
-    docker_allure_service_url = 'http://localhost:5050'
+    docker_allure_service_url = "http://localhost:5050"
 
-    results_dir = rf'{os.path.dirname(os.path.realpath(__file__))}\target\allure-results'
+    results_dir = (
+        rf"{os.path.dirname(os.path.realpath(__file__))}\target\allure-results"
+    )
 
     # Send allure results with project_id in date format "yyyy-mm-dd":
     send_results(docker_allure_service_url, results_dir)
