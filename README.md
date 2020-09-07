@@ -109,3 +109,8 @@ This page contains a graph with results of latest 10 daily reports.
 
 <img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/docs/images/history.png" width=1100 alt="history">
 
+
+#### 3. Delete Reports
+In order to delete some report, you should click on the according button and confirm deletion in the alert window. The deleted report will not be available.
+
+<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/docs/images/delete_page.png" width=1100 alt="delete_reports">
