@@ -73,7 +73,8 @@ Now both services are running and you can start using them. (do not terminate th
 You can use ["allure-results-sample"](https://github.com/JamalZeynalov/allure-results-sample) project to generate some test results.
 Follow the steps in the project Readme.md description.
 
-In "allure-results-sample" project (and in this repository too) you can find ["send_allure_results.py"](/docs/send_allure_results.py) file. This file contains python script to send allure results to the locally running service.<br>
+In "allure-results-sample" project (and in this repository too) you can find ["send_allure_results.py"](https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/docs/send_allure_results.py) file. 
+This file contains python script to send allure results to the locally running service.<br>
 More ways to send results you can find [here](https://github.com/fescobar/allure-docker-service#send-results-through-api). 
 <br> 
 > After the service is deployed you have to modify parameters accordingly to send results:<br> 
@@ -108,3 +109,8 @@ This page contains a graph with results of latest 10 daily reports.
 
 <img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/docs/images/history.png" width=1100 alt="history">
 
+
+#### 3. Delete Reports
+In order to delete some report, you should click on the according button and confirm deletion in the alert window. The deleted report will not be available.
+
+<img src="https://raw.githubusercontent.com/JamalZeynalov/allure_docker_service_ui/master/docs/images/delete_page.png" width=1100 alt="delete_reports">
