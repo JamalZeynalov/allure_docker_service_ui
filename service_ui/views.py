@@ -1,13 +1,12 @@
-from os.path import isfile
-
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.views.decorators.cache import never_cache, cache_control
+from django.views.decorators.cache import cache_control, never_cache
 
 from service_ui.logic.allure_service_app import AllureServiceApp
 from service_ui.logic.bar_plots import generate_tests_history_plot
-from service_ui.logic.projects_filtering import get_latest_daily, get_all_daily_reports
-from service_ui.logic.projects_filtering import get_report_path_if_exists
+from service_ui.logic.projects_filtering import (get_all_daily_reports,
+                                                 get_latest_daily,
+                                                 get_report_path_if_exists)
 
 
 @never_cache
@@ -60,15 +59,9 @@ def history(request):
     """ GGenerate "Daily History" plot that is based on results of latest 10 reports
     """
     latest_10_daily_reports = get_latest_daily()
-    generate_tests_history_plot(latest_10_daily_reports)
+    plot_div = generate_tests_history_plot(latest_10_daily_reports)
 
-    plot_path = (
-        "trending.png"
-        if isfile("./service_ui/static/trending.png")
-        else "no-content.jpg"
-    )
-
-    return render(request, "service_ui/trend_graph.html", {"plot_path": plot_path})
+    return render(request, "service_ui/trend_graph.html", {"plot_div": plot_div})
 
 
 @never_cache
