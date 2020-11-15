@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block report %}
-    {% load static %}
-    <img src="{% static plot_path  %}" alt="History plot">
+      {% autoescape off %}
+          {{ plot_div }}
+      {% endautoescape %}
 {% endblock %}
